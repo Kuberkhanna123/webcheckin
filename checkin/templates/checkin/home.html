@@ -1,0 +1,171 @@
+from django.conf import settings
+from django.conf.urls.static import static
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+
+{% if error %}
+
+
+{{ error }}
+
+
+{% endif %}
+<head>
+	<title>Lall Ji Tourist Resort | Web Check In</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+<!--===============================================================================================-->
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+<p class="aligncenter">
+	{% load static %}
+<img class="logo" src="{% static 'images/logo.png' %}"></p>
+<br>
+
+
+<center><h2>Web Check-In</h2></center><br>
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" action="{% url 'home' %}" method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+
+				<span class="contact100-form-title">
+					Enter your details to Web Check-In
+				</span>
+
+				<label class="label-input100" for="first-name">Personal Details *</label>
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+					<input id="first-name" class="input100" type="text" name="first-name" placeholder="First name">
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
+					<input class="input100" type="text" name="last-name" placeholder="Last name">
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" for="email">Enter your email *</label>
+				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<input id="email" class="input100" type="text" name="email" placeholder="Eg. info@info.com">
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" for="phone">Enter phone number</label>
+				<div class="wrap-input100">
+					<input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +91 9999999999">
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" for="phone">Enter your address</label>
+				<div class="wrap-input100">
+					<input id="text" class="input100" type="text" name="address" placeholder="Eg. Oak Grove Club Road, Dalhousie">
+					<span class="focus-input100"></span>
+				</div>
+
+				<center><label class="label-input100" for="rooms">Number of adults:</label>
+				<select name="rooms-adults" id="rooms">
+				<option value=""></option>
+ 				<option value="1a">1 Adult</option>
+ 				<option value="2a">2 Adults</option>
+ 				<option value="3a">3 Adults</option>
+				</select></center>
+				<br><br>
+				<center><label class="label-input100" for="rooms">Number of kids: (Under 18)</label>
+				<select name="rooms-kids" id="rooms">
+				<option value=""></option>
+ 				<option value="1k">1 Kid</option>
+ 				<option value="2k">2 Kids</option>
+ 				<option value="3k">3 Kids</option>
+				</select></center>
+<br><br>
+				<label class="label-input100" for="rooms">Please upload your ID Proof:</label>
+					<input type="file" name="file" id="myFile">
+
+<br>
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+
+						<input class="btn btn-primary" type="submit" value="Checkin">
+					</button>
+				</div><br>
+
+			</form>
+
+
+
+			<div class="contact100-more flex-col-c-m" style="background-image: url('images/bg-01.jpg');">
+				<div class="flex-w size1 p-b-47">
+					<div class="txt1 p-r-25">
+						<span class="lnr lnr-map-marker"></span>
+					</div>
+
+					<div class="flex-col size2">
+						<span class="txt1 p-b-20">
+							Address
+						</span>
+
+						<span class="txt3">
+							Bus Stand, Lovers Lane Near, Dalhousie, Himachal Pradesh <br>176304
+						</span>
+					</div>
+				</div>
+
+				<div class="dis-flex size1 p-b-47">
+					<div class="txt1 p-r-25">
+						<span class="lnr lnr-phone-handset"></span>
+					</div>
+
+					<div class="flex-col size2">
+						<span class="txt1 p-b-20">
+							Talk to Us
+						</span>
+
+						<a href="tel:+919418010549"><span class="txt3">
+							+91 94180 10549
+						</span></a>
+					</div>
+				</div>
+
+				<div class="dis-flex size1 p-b-47">
+					<div class="txt1 p-r-25">
+						<span class="lnr lnr-envelope"></span>
+					</div>
+
+					<div class="flex-col size2">
+						<span class="txt1 p-b-20">
+							Email Us
+						</span>
+
+						<a href="mailto:lalljiresortdalhousie@gmail.com"><span class="txt3">
+							lalljiresortdalhousie@gmail.com
+						</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<marquee>Help us to fight COVID-19 by maintaining social distancing and sanitizing yourself frequently.</marquee>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+
+
+</body>
+</html>
